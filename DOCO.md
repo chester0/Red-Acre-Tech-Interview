@@ -1,13 +1,15 @@
 # Documentation
 
+Get the api and front end building localy:
+
 - Remove file locations for requirements in requirements.txt
 - Remove unused requirements from requirements.txt
 
 
 ## After successfull local build
 
-- Create Dockerfile for api
-- Create Dockerfile for sys-stats
+- Create Dockerfile/compose for api
+- Create Dockerfile/compose for sys-stats
 
 
 
@@ -19,6 +21,8 @@
 docker build -t red-acre-api .
 docker tag red-acre-api:latest public.ecr.aws/g0q4k7i4/red-acre-api:latest
 docker push public.ecr.aws/g0q4k7i4/red-acre-api:latest`
+
+expose port via command line argument: -p 5000:5000 (docker port/host port)
 
 Compose build:
 
@@ -32,3 +36,17 @@ docker build -t red-acre-frontend .
 docker tag red-acre-frontend:latest public.ecr.aws/g0q4k7i4/red-acre-frontend:latest
 docker push public.ecr.aws/g0q4k7i4/red-acre-frontend:latest`
 
+expose port via command line argument: -p 4000:4000 (docker port/host port)
+
+
+## Deploy resources to AWS with terraform
+
+- Push build docker image to ECR (done)
+- Create target group, load balancer, listener rule, route53 and docker container 
+    using pushed image in ECR using terraform (WIP)
+
+## TODO
+
+- some kind of variable replacement/obfuscation for API/Secret keys and to manage different values for 
+  different environments (Octopus?)
+- deploy rest of aws resources to aws (terraform plan/deploy)

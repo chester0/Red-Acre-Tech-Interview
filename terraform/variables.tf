@@ -1,5 +1,5 @@
 variable "env_aws" {
-  default = "prod"
+  default = "dev"
 }
 
 variable "route53_zoneId" {

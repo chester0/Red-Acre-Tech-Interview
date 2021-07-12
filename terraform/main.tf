@@ -13,3 +13,5 @@ data "aws_ecr_image" "service_image" {
   image_tag       = "latest"
 }
 
+
+
