@@ -15,3 +15,32 @@ data "aws_ecr_image" "service_image" {
 
 
 
+resource "docker_container" "API" {
+  name  = "API"
+  image = "public.ecr.aws/g0q4k7i4/red-acre-api"
+
+  ports {
+    internal = "5000"
+    external = "5000"
+  }
+}
+
+resource "docker_container" "FrontEnd" {
+  name  = "FrontEnd"
+  image = "public.ecr.aws/g0q4k7i4/red-acre-frontend"
+
+  ports {
+    internal = "4000"
+    external = "4000"
+  }
+}
+
+resource "docker_container" "Proxy" {
+  name  = "Proxy"
+  image = "nginx:latest"
+
+  ports {
+    internal = "3000"
+    external = "80"
+  }
+}
