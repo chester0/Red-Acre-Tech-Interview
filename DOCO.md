@@ -58,4 +58,6 @@ expose port via command line argument: -p 4000:4000 (docker port/host port)
 
 ## Other Notes
 
+- Committing on a feature branch as per gitflow. - see: feature/first_attempt 
+
 
