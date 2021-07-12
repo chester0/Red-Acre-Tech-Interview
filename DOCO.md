@@ -45,8 +45,17 @@ expose port via command line argument: -p 4000:4000 (docker port/host port)
 - Create target group, load balancer, listener rule, route53 and docker container 
     using pushed image in ECR using terraform (WIP)
 
+
+### NGINX Proxy
+- Run in docker
+- Setup up to serve the api backend to the front end can access
+
 ## TODO
 
 - some kind of variable replacement/obfuscation for API/Secret keys and to manage different values for 
   different environments (Octopus?)
 - deploy rest of aws resources to aws (terraform plan/deploy)
+
+## Other Notes
+
+
