@@ -50,6 +50,11 @@ expose port via command line argument: -p 4000:4000 (docker port/host port)
 - Run in docker
 - Setup up to serve the api backend to the front end can access
 
+to run:
+
+`docker run -it --rm -d -p 8080:80 --name web nginx`
+
+
 ## TODO
 
 - some kind of variable replacement/obfuscation for API/Secret keys and to manage different values for 
@@ -59,5 +64,9 @@ expose port via command line argument: -p 4000:4000 (docker port/host port)
 ## Other Notes
 
 - Committing on a feature branch as per gitflow. - see: feature/first_attempt 
-
+- Terraform is for all 3 containers resources.
+- Will use the TaskDefinition.json to specify the AWS fargate container size/details
+- Planing to use octopus with octostash for variable replacement
+- No experience with Kubernetes and given my current setup, or lack thereof I will not be attempting
+task 3.
 
